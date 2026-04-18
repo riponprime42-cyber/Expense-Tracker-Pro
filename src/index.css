@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand-bg: #0F172A;
+  --color-brand-surface: #1E293B;
+  --color-brand-border: #334155;
+  --color-brand-text-primary: #F8FAFC;
+  --color-brand-text-secondary: #94A3B8;
+  --color-brand-accent-1: #38BDF8;
+  --color-brand-accent-2: #818CF8;
+  --color-brand-accent-3: #F472B6;
+  --color-brand-success: #4ADE80;
+  --color-brand-warning: #FB923C;
+}
+
+@layer base {
+  body {
+    @apply font-sans transition-colors duration-300;
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-text-primary);
+  }
+
+  /* High Density Adjustments */
+  .card-premium {
+    @apply bg-brand-surface border border-brand-border rounded-2xl shadow-lg;
+  }
+
+  .text-secondary {
+    @apply text-brand-text-secondary;
+  }
+  
+  .bg-gradient-brand {
+    background: linear-gradient(135deg, #1E293B 0%, #111827 100%);
+  }
+}
+
+/* Maintain light mode for those who still want it, but default to the density theme palette if dark is preferred */
+.dark body {
+  background-color: #0b1120;
+}
